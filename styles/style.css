@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-fundo: #fffdf6;
+    --cor-texto: #1E1E1E;
+    --cor-destaque: #3A6EA5;
+    --cor-botao: #EBD8A4;
+    --cor-botao-hover: #C8B374;
+    --cor-texto-botao: #1E1E1E;
+    --cor-link: #3A6EA5;
+    --cor-link-hover: #2c5180;
+}
+
+.tema-escuro {
+    --cor-fundo: #1E1E1E;
+    --cor-texto: #EBD8A4;
+    --cor-destaque: #3A6EA5;
+    --cor-botao: #3A6EA5;
+    --cor-botao-hover: #5C88C4;
+    --cor-texto-botao: #FFFDF6;
+    --cor-link: #EBD8A4;
+    --cor-link-hover: #f4e8c3;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: all 0.3s ease;
+    max-width: 100%;
+}
+
+a {
+    color: var(--cor-link);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-link-hover);
+    text-decoration: underline;
+}
+
+header {
+    max-width: 80%;
+    width: 100%;
+    max-height: 80px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+
+.icone {
+    position: relative;
+    top: -8px;
+    height: 80%;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+#nav-btn-mobile {
+    display: none;
+}
+
+#toggle-theme {
+    background-color: var(--cor-botao);
+    color: var(--cor-texto-botao);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#toggle-theme:hover {
+    background-color: var(--cor-botao-hover);
+}
+
+@media (max-width: 768px) {
+    #nav-ul {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        top: 50px;
+    }
+
+    #nav-ul.ativo {
+        display: flex;
+    }
+
+    #nav-btn-mobile {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
