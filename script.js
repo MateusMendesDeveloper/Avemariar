@@ -3,6 +3,7 @@ const body = document.body;
 const iconeTema = document.getElementById('icon-theme');
 const botaoMenu = document.getElementById('nav-btn-mobile');
 const menu = document.getElementById('nav-ul');
+const navIMobile = document.getElementById('nav-i-mobile');
 
 // Verifica o tema salvo ao carregar a página
 const temaSalvo = localStorage.getItem('tema');
@@ -17,18 +18,22 @@ botaoTema.addEventListener('click', () => {
     const temaEscuroAtivo = body.classList.toggle('tema-escuro');
 
     if (temaEscuroAtivo) {
-        //ícone de lua
-        iconeTema.classList.remove('fa-sun');
-        iconeTema.classList.add('fa-moon');
+        iconeTema.classList.replace('fa-sun', 'fa-moon');
         localStorage.setItem('tema', 'escuro');
     } else {
-        //ícone de sol
-        iconeTema.classList.remove('fa-moon');
-        iconeTema.classList.add('fa-sun');
+        iconeTema.classList.replace('fa-moon', 'fa-sun');
         localStorage.setItem('tema', 'claro');
     }
 });
 
+// Alterna o menu mobile
 botaoMenu.addEventListener('click', () => {
-    menu.classList.toggle('ativo');
+    const estaAtivo = menu.classList.toggle('ativo');
+    botaoMenu.setAttribute('aria-expanded', estaAtivo); // acessibilidade
+
+    if (estaAtivo) {
+        navIMobile.classList.replace('fa-bars', 'fa-xmark');
+    } else {
+        navIMobile.classList.replace('fa-xmark', 'fa-bars');
+    }
 });

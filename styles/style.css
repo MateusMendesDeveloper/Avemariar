@@ -5,6 +5,7 @@
 }
 
 :root {
+    /* Cores */
     --cor-fundo: #fffdf6;
     --cor-texto: #1E1E1E;
     --cor-destaque: #3A6EA5;
@@ -13,6 +14,16 @@
     --cor-texto-botao: #1E1E1E;
     --cor-link: #3A6EA5;
     --cor-link-hover: #2c5180;
+
+    /* Fontes */
+    --font-titulo: 'Playfair Display', serif;
+    --font-texto: 'Inter', sans-serif;
+    --font-destaque: 'Montserrat', sans-serif;
+
+    /* Pesos */
+    --peso-normal: 400;
+    --peso-medium: 600;
+    --peso-bold: 700;
 }
 
 .tema-escuro {
@@ -29,8 +40,9 @@
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
     max-width: 100%;
+    overflow-x: hidden;
 }
 
 a {
@@ -44,14 +56,43 @@ a:hover {
     text-decoration: underline;
 }
 
+h1,
+h2,
+h3 {
+    font-family: var(--font-titulo);
+    font-weight: var(--peso-bold);
+}
+
+p,
+li,
+span {
+    font-family: var(--font-texto);
+    font-weight: var(--peso-normal);
+}
+
+button,
+.cta {
+    font-family: var(--font-destaque);
+    font-weight: var(--peso-medium);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Header */
+
 header {
-    max-width: 80%;
     width: 100%;
-    max-height: 80px;
-    position: fixed;
+    border-bottom: 1px solid var(--cor-link);
+    background-color: var(--cor-fundo);
+    position: sticky;
     top: 0;
-    left: 50%;
-    transform: translate(-50%);
+    z-index: 1;
+}
+
+.header-container {
+    max-width: 80%;
+    height: 80px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,24 +102,53 @@ header {
     display: flex;
     height: 80px;
     align-items: center;
+    gap: 0.2rem;
 }
 
-.icone {
+.logo-img {
     position: relative;
-    top: -8px;
-    height: 80%;
+    top: -4px;
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.3s ease;
 }
 
-.header-nav {
+/* Logo padrão (tema claro) */
+.logo-img {
+    background-image: url('../imgs/icone-escuro.png');
+}
+
+/* Quando estiver no tema escuro */
+.tema-escuro .logo-img {
+    background-image: url('../imgs/icone-claro.png');
+}
+
+.main-nav {
     display: flex;
     align-items: center;
-    gap: 2rem;
 }
 
-.header-nav ul {
+#nav-ul {
     display: flex;
     list-style: none;
-    gap: 1rem;
+}
+
+#nav-ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-fundo);
+    width: 4.5rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.5s ease;
+}
+
+#nav-ul li:hover {
+    background-color: var(--cor-botao);
 }
 
 #nav-btn-mobile {
@@ -99,16 +169,102 @@ header {
     background-color: var(--cor-botao-hover);
 }
 
+footer {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    border-top: 1px solid var(--cor-link);
+    font-family: var(--font-texto);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    padding-block: 1rem 3rem;
+}
+
+.footer-container {
+    height: auto;
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 40px;
+}
+
+.footer-links,
+.footer-contatos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links a,
+.footer-contatos a {
+    color: var(--cor-link);
+    font-weight: var(--peso-medium);
+}
+
+.footer-links a:hover,
+.footer-contatos a:hover {
+    color: var(--cor-link-hover);
+}
+
+.footer-copy {
+    font-size: 0.875rem;
+    color: var(--cor-texto);
+    opacity: 0.6;
+    max-width: 15%;
+}
+
+
 @media (max-width: 768px) {
+    .header-container {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .nav-actions {
+        display: flex;
+        gap: 2rem;
+    }
+
     #nav-ul {
+        height: 100%;
         display: none;
         flex-direction: column;
-        position: relative;
-        top: 50px;
+        position: fixed;
+        top: 80px;
+        right: 0;
+        width: 30%;
+        background-color: var(--cor-fundo);
+        border: 1px solid var(--cor-destaque);
+        gap: 1rem;
     }
 
     #nav-ul.ativo {
         display: flex;
+    }
+
+    #nav-ul li {
+        width: 100%;
+        height: 3rem;
+    }
+
+    #nav-ul li:hover {
+        background-color: var(--cor-botao);
     }
 
     #nav-btn-mobile {
@@ -117,5 +273,20 @@ header {
         border: none;
         font-size: 1.5rem;
         cursor: pointer;
+        color: var(--cor-botao);
+    }
+
+    #nav-btn-mobile:hover {
+        color: var(--cor-botao-hover);
+    }
+
+    .footer-container {
+        max-width: 100%;
+        gap: 1rem;
+    }
+
+    .footer-links,
+    .footer-contatos {
+        gap: 1.5rem;
     }
 }

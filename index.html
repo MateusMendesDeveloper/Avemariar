@@ -11,26 +11,61 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
     <title>Avemariar</title>
 </head>
 
 <body>
     <header>
-        <div class="logo">
-            <img src="./imgs/icone.png" alt="Icone" class="icone">
-            <h1>Avemariar</h1>
+        <div class="header-container">
+            <a href="#" class="logo" aria-label="Página inicial">
+                <div alt="Ícone do site" class="logo-img"></div>
+                <h1 class="logo-text">Avemariar</h1>
+            </a>
+
+            <nav class="main-nav" aria-label="Menu principal">
+                <ul id="nav-ul" class="nav-links">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Rosário</a></li>
+                    <li><a href="#">Liturgia</a></li>
+                    <li><a href="#">Loja</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button id="nav-btn-mobile" class="nav-toggle" aria-label="Abrir menu">
+                        <i id="nav-i-mobile" class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <button id="toggle-theme" class="theme-toggle" aria-label="Alternar tema">
+                        <i id="icon-theme" class="fa-solid fa-sun"></i>
+                    </button>
+                </div>
+            </nav>
         </div>
-        <nav class="header-nav">
-            <ul id="nav-ul">
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Rosário</a></li>
-                <li><a href="">Liturgia</a></li>
-                <li><a href="">Loja</a></li>
-            </ul>
-            <button id="nav-btn-mobile"><i class="fa-solid fa-bars"></i></button>
-            <button id="toggle-theme"><i id="icon-theme" class="fa-solid fa-sun"></i></button>
-        </nav>
     </header>
+    <footer>
+        <div class="footer-container">
+            <a href="#" class="logo" aria-label="Página inicial">
+                <div alt="Ícone do site" class="logo-img"></div>
+                <h1 class="logo-text">Avemariar</h1>
+            </a>
+            <ul class="footer-contatos">
+                <li><a href="">Github</a></li>
+                <li><a href="">Instagram</a></li>
+                <li><a href="">Linkedin</a></li>
+            </ul>
+            <ul class="footer-links">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Rosário</a></li>
+                <li><a href="#">Liturgia</a></li>
+                <li><a href="#">Loja</a></li>
+            </ul>
+            <p class="footer-copy">© 2025 Avemariar. Todos os direitos reservados.</p>
+        </div>
+    </footer>
     <script src="./script.js"></script>
 </body>
 
