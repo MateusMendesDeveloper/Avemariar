@@ -5,15 +5,15 @@
 }
 
 :root {
-    /* Cores */
-    --cor-fundo: #fffdf6;
-    --cor-texto: #1E1E1E;
-    --cor-destaque: #3A6EA5;
-    --cor-botao: #EBD8A4;
-    --cor-botao-hover: #C8B374;
-    --cor-texto-botao: #1E1E1E;
-    --cor-link: #3A6EA5;
-    --cor-link-hover: #2c5180;
+    /* Paleta Original (clara) */
+    --cor-fundo: #FDF8EF;
+    --cor-texto: #6B7280;
+    --cor-destaque: #445E78;
+    --cor-botao: #C25C4E;
+    --cor-botao-hover: #D56A5C;
+    --cor-texto-botao: #FDF8EF;
+    --cor-link: #445E78;
+    --cor-link-hover: #2F3E52;
 
     /* Fontes */
     --font-titulo: 'Playfair Display', serif;
@@ -27,15 +27,17 @@
 }
 
 .tema-escuro {
-    --cor-fundo: #1E1E1E;
-    --cor-texto: #EBD8A4;
-    --cor-destaque: #3A6EA5;
-    --cor-botao: #3A6EA5;
-    --cor-botao-hover: #5C88C4;
-    --cor-texto-botao: #FFFDF6;
-    --cor-link: #EBD8A4;
-    --cor-link-hover: #f4e8c3;
+    /* Paleta Original - Tema Escuro */
+    --cor-fundo: #121212;
+    --cor-texto: #AEB4BC;
+    --cor-destaque: #E4E8EC;
+    --cor-botao: #E07B6A;
+    --cor-botao-hover: #F29789;
+    --cor-texto-botao: #121212;
+    --cor-link: #E4E8EC;
+    --cor-link-hover: #FFFFFF;
 }
+
 
 body {
     background-color: var(--cor-fundo);
@@ -134,6 +136,8 @@ header {
 #nav-ul {
     display: flex;
     list-style: none;
+    gap: 0.5rem;
+    margin: 0.5rem;
 }
 
 #nav-ul li {
@@ -141,7 +145,6 @@ header {
     align-items: center;
     justify-content: center;
     background-color: var(--cor-fundo);
-    width: 4.5rem;
     padding: 0.5rem;
     border-radius: 8px;
     transition: background 0.5s ease;
@@ -169,15 +172,83 @@ header {
     background-color: var(--cor-botao-hover);
 }
 
+main {
+    height: auto;
+    max-width: 100%;
+    background-color: var(--cor-fundo);
+}
+
+.hero-container {
+    width: 100%;
+    height: 400px;
+    background-color: var(--cor-fundo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-carrossel {
+    height: 100%;
+    width: 80%;
+    max-width: 800px;
+    background-color: var(--cor-link);
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.ativo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80%;
+    height: 100%;
+    color: #1E1E1E;
+    background-color: var(--cor-link);
+    font-size: 2rem;
+}
+
+.indicadores {
+    position: absolute;
+    top: 425px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicadores button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--cor-fundo);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicadores button:hover {
+    background-color: var(--cor-botao-hover);
+}
+
+.indicadores button.ativo {
+    background-color: var(--cor-botao);
+}
+
+.indicadores button.ativo:hover {
+    background-color: var(--cor-botao-hover);
+}
+
 footer {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     border-top: 1px solid var(--cor-link);
     font-family: var(--font-texto);
-    position: fixed;
-    bottom: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 9999;
     padding-block: 1rem 3rem;
 }
 
@@ -250,7 +321,7 @@ footer {
         right: 0;
         width: 30%;
         background-color: var(--cor-fundo);
-        border: 1px solid var(--cor-destaque);
+        border: 1px solid var(--cor-link);
         gap: 1rem;
     }
 
@@ -273,20 +344,22 @@ footer {
         border: none;
         font-size: 1.5rem;
         cursor: pointer;
-        color: var(--cor-botao);
+        color: var(--cor-link);
     }
 
     #nav-btn-mobile:hover {
-        color: var(--cor-botao-hover);
+        color: var(--cor-link-hover);
     }
 
     .footer-container {
-        max-width: 100%;
-        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
     }
 
-    .footer-links,
-    .footer-contatos {
-        gap: 1.5rem;
+    .footer-copy {
+        text-align: center;
+        max-width: 100%;
     }
 }
