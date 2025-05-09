@@ -255,6 +255,76 @@ main {
     background-color: var(--hover-button-bg);
 }
 
+main {
+    height: auto;
+    max-width: 100%;
+    background-color: var(--cor-fundo);
+}
+
+.hero-container {
+    width: 100%;
+    height: 400px;
+    background-color: var(--cor-fundo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-carrossel {
+    height: 100%;
+    width: 80%;
+    max-width: 800px;
+    background-color: var(--cor-link);
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.ativo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80%;
+    height: 100%;
+    color: #1E1E1E;
+    background-color: var(--cor-link);
+    font-size: 2rem;
+}
+
+.indicadores {
+    position: absolute;
+    top: 425px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicadores button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--cor-fundo);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicadores button:hover {
+    background-color: var(--cor-botao-hover);
+}
+
+.indicadores button.ativo {
+    background-color: var(--cor-botao);
+}
+
+.indicadores button.ativo:hover {
+    background-color: var(--cor-botao-hover);
+}
+
 footer {
     background-color: var(--background);
     color: var(--body-text);
