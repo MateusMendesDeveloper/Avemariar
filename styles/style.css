@@ -5,63 +5,70 @@
 }
 
 :root {
-    /* Paleta Original (clara) */
-    --cor-fundo: #FDF8EF;
-    --cor-texto: #6B7280;
-    --cor-destaque: #445E78;
-    --cor-botao: #C25C4E;
-    --cor-botao-hover: #D56A5C;
-    --cor-texto-botao: #FDF8EF;
-    --cor-link: #445E78;
-    --cor-link-hover: #2F3E52;
+/* Cores */
+    --logo-icon: #305F72;
+    --logo-text: #D4AF37;
+    --background: #FAFAF9;
+    --title-text: #1F1F1F;
+    --body-text: #333333;
+    --button-bg: #305F72;
+    --button-text: #FFFFFF;
+    --link-color: #305F72;
+    --border-color: #E0E0E0;
 
-    /* Fontes */
-    --font-titulo: 'Playfair Display', serif;
-    --font-texto: 'Inter', sans-serif;
-    --font-destaque: 'Montserrat', sans-serif;
+    --hover-logo-icon: #3C6F88;
+    --hover-logo-text: #E0C45A;
+    --hover-button-bg: #3C6F88;
+    --hover-link-color: #3C6F88;
+    --hover-border-color: #CFCFCF;
 
-    /* Pesos */
-    --peso-normal: 400;
-    --peso-medium: 600;
-    --peso-bold: 700;
+/* Fonts */
+    --font-logo: "Cormorant Garamond", serif;
+    --font-texto: "Merriweather", serif;
 }
 
 .tema-escuro {
-    /* Paleta Original - Tema Escuro */
-    --cor-fundo: #121212;
-    --cor-texto: #AEB4BC;
-    --cor-destaque: #E4E8EC;
-    --cor-botao: #E07B6A;
-    --cor-botao-hover: #F29789;
-    --cor-texto-botao: #121212;
-    --cor-link: #E4E8EC;
-    --cor-link-hover: #FFFFFF;
+    --logo-icon: #B4D4E3;
+    --logo-text: #EEDC8A;
+    --background: #1C1C1E;
+    --title-text: #FFFFFF;
+    --body-text: #CCCCCC;
+    --button-bg: #D4AF37;
+    --button-text: #1C1C1E;
+    --link-color: #B4D4E3;
+    --border-color: #333333;
+
+    --hover-logo-icon: #CBE6F2;
+    --hover-logo-text: #F2E7A6;
+    --hover-button-bg: #E0C45A;
+    --hover-link-color: #CBE6F2;
+    --hover-border-color: #444444;
 }
 
-
 body {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
+    background-color: var(--background);
+    color: var(--body-text);
     transition: background-color 0.3s ease, color 0.3s ease;
     max-width: 100%;
     overflow-x: hidden;
+    font-family: var(--font-texto);
 }
 
 a {
-    color: var(--cor-link);
+    color: var(--link-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--cor-link-hover);
+    color: var(--hover-link-color);
     text-decoration: underline;
 }
 
 h1,
 h2,
 h3 {
-    font-family: var(--font-titulo);
+    font-family: var(--font-texto);
     font-weight: var(--peso-bold);
 }
 
@@ -74,7 +81,7 @@ span {
 
 button,
 .cta {
-    font-family: var(--font-destaque);
+    font-family: var(--font-texto);
     font-weight: var(--peso-medium);
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -84,8 +91,8 @@ button,
 
 header {
     width: 100%;
-    border-bottom: 1px solid var(--cor-link);
-    background-color: var(--cor-fundo);
+    border-bottom: 1px solid var(--link-color);
+    background-color: var(--background);
     position: sticky;
     top: 0;
     z-index: 1;
@@ -118,14 +125,20 @@ header {
     transition: background-image 0.3s ease;
 }
 
+.logo-text {
+    color: var(--logo-text);
+    font-family: var(--font-logo);
+    font-weight: bold;
+}
+
 /* Logo padrão (tema claro) */
 .logo-img {
-    background-image: url('../imgs/icone-escuro.png');
+    background-image: url('../imgs/icone-claro.png')
 }
 
 /* Quando estiver no tema escuro */
 .tema-escuro .logo-img {
-    background-image: url('../imgs/icone-claro.png');
+    background-image: url('../imgs/icone-escuro.png');
 }
 
 .main-nav {
@@ -144,14 +157,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--cor-fundo);
+    background-color: var(--background);
     padding: 0.5rem;
     border-radius: 8px;
     transition: background 0.5s ease;
 }
 
 #nav-ul li:hover {
-    background-color: var(--cor-botao);
+    background-color: var(--button-bg);
 }
 
 #nav-btn-mobile {
@@ -159,8 +172,8 @@ header {
 }
 
 #toggle-theme {
-    background-color: var(--cor-botao);
-    color: var(--cor-texto-botao);
+    background-color: var(--button-bg);
+    color: var(--button-text);
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -169,19 +182,19 @@ header {
 }
 
 #toggle-theme:hover {
-    background-color: var(--cor-botao-hover);
+    background-color: var(--hover-button-bg);
 }
 
 main {
     height: auto;
     max-width: 100%;
-    background-color: var(--cor-fundo);
+    background-color: var(--background);
 }
 
 .hero-container {
     width: 100%;
     height: 400px;
-    background-color: var(--cor-fundo);
+    background-color: var(--background);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,7 +204,7 @@ main {
     height: 100%;
     width: 80%;
     max-width: 800px;
-    background-color: var(--cor-link);
+    background-color: var(--link-color);
     position: relative;
 }
 
@@ -206,7 +219,7 @@ main {
     min-width: 80%;
     height: 100%;
     color: #1E1E1E;
-    background-color: var(--cor-link);
+    background-color: var(--link-color);
     font-size: 2rem;
 }
 
@@ -225,27 +238,27 @@ main {
     height: 15px;
     border-radius: 50%;
     border: none;
-    background-color: var(--cor-fundo);
+    background-color: var(--background);
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .indicadores button:hover {
-    background-color: var(--cor-botao-hover);
+    background-color: var(--hover-button-bg);
 }
 
 .indicadores button.ativo {
-    background-color: var(--cor-botao);
+    background-color: var(--button-bg);
 }
 
 .indicadores button.ativo:hover {
-    background-color: var(--cor-botao-hover);
+    background-color: var(--hover-button-bg);
 }
 
 footer {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    border-top: 1px solid var(--cor-link);
+    background-color: var(--background);
+    color: var(--body-text);
+    border-top: 1px solid var(--link-color);
     font-family: var(--font-texto);
     width: 100%;
     z-index: 9999;
@@ -284,22 +297,21 @@ footer {
 
 .footer-links a,
 .footer-contatos a {
-    color: var(--cor-link);
+    color: var(--link-color);
     font-weight: var(--peso-medium);
 }
 
 .footer-links a:hover,
 .footer-contatos a:hover {
-    color: var(--cor-link-hover);
+    color: var(--hover-link-color);
 }
 
 .footer-copy {
     font-size: 0.875rem;
-    color: var(--cor-texto);
+    color: var(--body-text);
     opacity: 0.6;
     max-width: 15%;
 }
-
 
 @media (max-width: 768px) {
     .header-container {
@@ -320,8 +332,8 @@ footer {
         top: 80px;
         right: 0;
         width: 30%;
-        background-color: var(--cor-fundo);
-        border: 1px solid var(--cor-link);
+        background-color: var(--background);
+        border: 1px solid var(--link-color);
         gap: 1rem;
     }
 
@@ -335,7 +347,7 @@ footer {
     }
 
     #nav-ul li:hover {
-        background-color: var(--cor-botao);
+        background-color: var(--button-bg);
     }
 
     #nav-btn-mobile {
@@ -344,11 +356,11 @@ footer {
         border: none;
         font-size: 1.5rem;
         cursor: pointer;
-        color: var(--cor-link);
+        color: var(--link-color);
     }
 
     #nav-btn-mobile:hover {
-        color: var(--cor-link-hover);
+        color: var(--hover-link-color);
     }
 
     .footer-container {
